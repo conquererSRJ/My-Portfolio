@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SRJ | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      border: 8px solid gold;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px gold;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      text-shadow: 0 0 10px #00f0ff;
+      margin-bottom: 20px;
+      animation: glowPulse 2s infinite ease-in-out;
+    }
+
+    .typewriter-container {
+      margin-top: 20px;
+    }
+
+    .typewriter {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #00f0ff;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 20px;
+      border-radius: 25px;
+      display: inline-block;
+      box-shadow: 0 0 10px #00f0ff44;
+      animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+      border-right: 3px solid #00f0ff;
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #00f0ff;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 15px;
+      overflow: hidden;
+      z-index: 0;
+      color: black;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, #00f0ff, #0fffc1, #00f0ff);
+      z-index: -1;
+      border-radius: 18px;
+      animation: borderGlow 3s linear infinite;
+    }
+
+    @keyframes borderGlow {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00f0ff88;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #00f0ff22;
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #00f0ff88;
+      transition: background 0.3s;
+    }
+
+    .skill:hover {
+      background: #00f0ff88;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9rem;
+      background: #00000022;
+      margin-top: 60px;
+    }
+
+    a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .card a:hover i {
+      color: #00f0ff;
+      transition: color 0.3s ease;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+      }
+      50% {
+        text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+      }
+      100% {
+        text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+      }
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00f0ff;
+      box-shadow: 0 0 15px #00f0ff;
+      animation: glowPulse 2s infinite ease-in-out;
+    }
+
+    /* About Me text bigger and bolder */
+    .card p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profile-header">
+      <img src="photo2.jpg" alt="SRJ Profile Picture" class="profile-pic" />
+      <h1>ITS SRJ</h1>
+    </div>
+
+    <div class="typewriter-container">
+      <div class="typewriter">Future Robotics Engineer | Creator | Innovator</div>
+    </div>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        Hello! I'm Swaraj Banerjee, a passionate first-year Mechanical Engineering
+        student with a keen interest in robotics and intelligent machines.
+        My goal is to bridge the gap between mechanical design and software
+        development by creating innovative robots that can interact seamlessly
+        with their environment.
+        I love exploring the intersection of mechanics, electronics, and programming
+        — blending these fields to bring ideas to life. From designing circuits and
+        coding microcontrollers to 3D printing and testing robotic arms, every project
+        is a new learning adventure.
+        Currently, I’m honing my skills in Arduino, Python, and C++, and diving into
+        advanced topics like machine learning and automation. I believe the future
+        belongs to those who can combine creativity with technical knowledge, and
+        I’m excited to contribute to this rapidly evolving field.
+        When I’m not working on robotics, you’ll find me exploring new tech trends,
+        watching inspiring science documentaries, or collaborating on open-source projects.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Python</div>
+      <div class="skill">C++</div>
+      <div class="skill">Arduino</div>
+      <!-- <div class="skill">SolidWorks</div> -->
+      <!-- <div class="skill">Fusion 360</div> -->
+      <div class="skill">HTML &amp; CSS</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>🤖 Line Following Robot</h3>
+      <p>
+        Developed a compact, efficient line-following robot using Arduino and infrared
+        (IR) sensors. The robot is capable of detecting and following black lines on
+        various surfaces with high precision. It features real-time sensor feedback,
+        motor control algorithms for smooth turns, and obstacle avoidance mechanisms.
+      </p>
+      <p>
+        This project helped me deepen my understanding of embedded systems, sensor
+        integration, and robotics control.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🏎️ High-Speed Small Robotic Car</h3>
+      <p>
+        Built a small-scale robotic car designed for speed and agility, powered by a
+        high-torque motor and controlled via Arduino. The car features remote control
+        capabilities, smooth acceleration, and precise steering for maneuvering tight
+        tracks.
+      </p>
+      <p>
+        This project enhanced my skills in motor driver circuits, wireless
+        communication, and chassis design.
+      </p>
+    </div>
+
+    <h2>Upcoming Project</h2>
+
+    <div class="card">
+      <h3>🚁 Autonomous Drone</h3>
+      <p>
+        Currently planning and designing an autonomous drone equipped with GPS
+        navigation, real-time telemetry, and obstacle avoidance sensors. This drone
+        will be capable of performing predefined flight paths with precision, and
+        potentially used for aerial mapping and surveillance.
+      </p>
+      <p>
+        The project aims to combine advanced robotics, control systems, and AI
+        algorithms to create a fully functional UAV.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Me</h2>
+    <div class="card">
+      <p>Email: <a style="color: black; text-decoration: none;">sigmaxtreme007@gmail.com</a></p>
+
+      <div style="margin-top: 20px;">
+        <a
+          href="https://www.instagram.com/banerjeesrj/"
+          target="_blank"
+          style="margin: 0 10px; color: #f0f0f0;"
+          ><i class="fab fa-instagram fa-lg"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/jhuma.banerjee.376043"
+          target="_blank"
+          style="margin: 0 10px; color: #f0f0f0;"
+          ><i class="fab fa-facebook fa-lg"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/swaraj-banerjee-4938942a4/"
+          target="_blank"
+          style="margin: 0 10px; color: #f0f0f0;"
+          ><i class="fab fa-linkedin fa-lg"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@swarajbanerjee3451"
+          target="_blank"
+          style="margin: 0 10px; color: #f0f0f0;"
+          ><i class="fab fa-youtube fa-lg"></i
+        ></a>
+        <a
+          href="https://x.com/MysterSydney"
+          target="_blank"
+          style="margin: 0 10px; color: #f0f0f0;"
+          ><i class="fab fa-x-twitter fa-lg"></i
+        ></a>
+        <!-- <a href="https://tiktok.com/@yourusername" target="_blank" style="margin: 0 10px; color: #f0f0f0;">
+          <i class="fab fa-tiktok fa-lg"></i>
+        </a> -->
+      </div>
+    </div>
+  </section>
+
+  <footer>Made with 💙 by SRJ | 2025</footer>
+</body>
+</html>
+
+
